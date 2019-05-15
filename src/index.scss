@@ -30,4 +30,23 @@ h5 {
 .bar {
   display: grid;
   grid-template-columns: 180px auto 100px 100px;
+  margin-bottom: 40px;
+}
+
+.logo {
+  font-size: 1.5em;
+}
+
+.controlButton {
+  cursor: pointer;
+  font-size: 110%;
+
+  &:hover {
+    color: yellow;
+  }
+}
+
+.controlBtnActive {
+  text-shadow: 0 0 10px #fff, 0 0 20px #49ff18, 0 0 30px #49ff18,
+    0 0 55px #49ff18, 7px -22px 4px rgba(95, 206, 151, 0);
 }

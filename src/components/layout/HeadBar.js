@@ -1,12 +1,13 @@
 import React from "react";
+import ControlButton from "../ui/ControlButton";
 
 const HeadBar = () => {
   return (
     <div className="bar">
-      <div>CryptoBash </div>
+      <div className="logo">CryptoBash </div>
       <div />
-      <div>Dashboard </div>
-      <div>Settings </div>
+      <ControlButton name="Dashboard" />
+      <ControlButton name="Settings" active />
     </div>
   );
 };
