@@ -1,4 +1,4 @@
-import { PAGE, FIRSTVISIT } from "./types";
+import { PAGE, FIRSTVISIT, COINDATA } from "./types";
 
 export const togglePage = page => {
   return {
@@ -11,5 +11,12 @@ export const firstVisit = isFirstVisit => {
   return {
     type: FIRSTVISIT,
     isFirstVisit
+  };
+};
+
+export const setCoinList = coinList => {
+  return {
+    type: COINDATA,
+    coinList
   };
 };
