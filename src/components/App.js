@@ -1,12 +1,12 @@
 import React from "react";
-import Welcome from "./components/Welcome";
-import HeadBar from "./components/layout/HeadBar";
+import HeadBar from "./layout/HeadBar";
+import Setting from "./setting/Setting";
 
 function App() {
   return (
     <div className="layout">
       <HeadBar />
-      <Welcome />
+      <Setting />
     </div>
   );
 }

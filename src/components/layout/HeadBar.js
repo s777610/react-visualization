@@ -1,33 +1,24 @@
-import React, { useState } from "react";
+import React from "react";
 import ControlButton from "../ui/ControlButton";
+import { connect } from "react-redux";
 
-const HeadBar = () => {
-  const [page, setPage] = useState("dashboard");
-
-  const togglePage = name => {
-    if (name === "Dashboard") {
-      setPage("dashboard");
-    } else {
-      setPage("settings");
-    }
-  };
+const HeadBar = props => {
+  const { page } = props;
 
   return (
     <div className="bar">
       <div className="logo">CryptoBash </div>
       <div />
-      <ControlButton
-        name="Dashboard"
-        togglePage={togglePage}
-        active={page === "dashboard"}
-      />
-      <ControlButton
-        name="Settings"
-        togglePage={togglePage}
-        active={page === "settings"}
-      />
+      <ControlButton name="Dashboard" active={page === "Dashboard"} />
+      <ControlButton name="Settings" active={page === "Settings"} />
     </div>
   );
 };
 
-export default HeadBar;
+const mapStateToProps = state => {
+  return {
+    page: state.page.currentPage
+  };
+};
+
+export default connect(mapStateToProps)(HeadBar);

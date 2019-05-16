@@ -1,4 +1,6 @@
 import React from "react";
+import { togglePage } from "../../actions/index";
+import { connect } from "react-redux";
 
 const ControlButton = props => {
   const { name, active } = props;
@@ -13,4 +15,7 @@ const ControlButton = props => {
   );
 };
 
-export default ControlButton;
+export default connect(
+  null,
+  { togglePage }
+)(ControlButton);

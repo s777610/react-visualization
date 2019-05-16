@@ -37,6 +37,7 @@ h5 {
   font-size: 1.5em;
 }
 
+// control button //
 .controlButton {
   cursor: pointer;
   font-size: 110%;
@@ -49,4 +50,16 @@ h5 {
 .controlBtnActive {
   text-shadow: 0 0 10px #fff, 0 0 20px #49ff18, 0 0 30px #49ff18,
     0 0 55px #49ff18, 7px -22px 4px rgba(95, 206, 151, 0);
+}
+
+.centerDiv {
+  margin: 20px;
+  color: green;
+}
+
+// confirm button //
+.confirmButton {
+  display: grid;
+  justify-content: center;
+  cursor: pointer;
 }

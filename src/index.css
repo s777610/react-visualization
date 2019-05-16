@@ -51,4 +51,18 @@ h5 {
 .controlBtnActive {
   text-shadow: 0 0 10px #fff, 0 0 20px #49ff18, 0 0 30px #49ff18, 0 0 55px #49ff18, 7px -22px 4px rgba(95, 206, 151, 0);
 }
+
+.centerDiv {
+  margin: 20px;
+  color: green;
+}
+
+.confirmButton {
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  cursor: pointer;
+}
 /*# sourceMappingURL=index.css.map */
