@@ -4,7 +4,10 @@ const ControlButton = props => {
   const { name, active } = props;
 
   return (
-    <div className={`controlButton ${active ? `controlBtnActive` : ""}`}>
+    <div
+      onClick={() => props.togglePage(name)}
+      className={`controlButton ${active ? `controlBtnActive` : ""}`}
+    >
       {name}
     </div>
   );
