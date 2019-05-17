@@ -1,24 +1,29 @@
 import React from "react";
-import ControlButton from "../ui/ControlButton";
-import { connect } from "react-redux";
+import { NavLink } from "react-router-dom";
 
-const HeadBar = props => {
-  const { page } = props;
-
+const HeadBar = () => {
   return (
     <div className="bar">
       <div className="logo">CryptoBash </div>
       <div />
-      <ControlButton name="Dashboard" active={page === "Dashboard"} />
-      <ControlButton name="Settings" active={page === "Settings"} />
+      <NavLink
+        className="controlButton"
+        exact
+        activeClassName="controlBtnActive"
+        to="/"
+      >
+        Dashboard
+      </NavLink>
+      <NavLink
+        exact
+        className="controlButton"
+        activeClassName="controlBtnActive"
+        to="/setting"
+      >
+        Settings
+      </NavLink>
     </div>
   );
 };
 
-const mapStateToProps = state => {
-  return {
-    page: state.page.currentPage
-  };
-};
-
-export default connect(mapStateToProps)(HeadBar);
+export default HeadBar;

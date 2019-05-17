@@ -39,9 +39,8 @@ h5 {
 
 // control button //
 .controlButton {
-  cursor: pointer;
   font-size: 110%;
-
+  color: #fff;
   &:hover {
     color: yellow;
   }
@@ -61,5 +60,7 @@ h5 {
 .confirmButton {
   display: grid;
   justify-content: center;
-  cursor: pointer;
+  &:hover {
+    color: yellow;
+  }
 }

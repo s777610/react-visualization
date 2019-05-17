@@ -40,8 +40,8 @@ h5 {
 }
 
 .controlButton {
-  cursor: pointer;
   font-size: 110%;
+  color: #fff;
 }
 
 .controlButton:hover {
@@ -63,6 +63,9 @@ h5 {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  cursor: pointer;
+}
+
+.confirmButton:hover {
+  color: yellow;
 }
 /*# sourceMappingURL=index.css.map */

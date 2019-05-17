@@ -1,10 +1,13 @@
 import React from "react";
-import { togglePage, firstVisit } from "../../actions/index";
+import { firstVisit } from "../../actions/index";
 import { connect } from "react-redux";
+import { Link } from "react-router-dom";
+import history from "../../history";
 
 const ConfirmButton = props => {
   const confirmFavorites = () => {
-    props.togglePage("Dashboard");
+    //props.togglePage("Dashboard");
+    history.push("/");
     props.firstVisit(false);
     localStorage.setItem(
       "cryptoDash",
@@ -15,15 +18,15 @@ const ConfirmButton = props => {
   };
 
   return (
-    <div className="centerDiv">
+    <Link to="/" className="centerDiv">
       <div className="confirmButton" onClick={confirmFavorites}>
         Confirm Favorites
       </div>
-    </div>
+    </Link>
   );
 };
 
 export default connect(
   null,
-  { togglePage, firstVisit }
+  { firstVisit }
 )(ConfirmButton);
