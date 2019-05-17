@@ -3,6 +3,8 @@ import Welcome from "./Welcome";
 import { firstVisit } from "../../actions/index";
 import { connect } from "react-redux";
 import Spinner from "react-spinkit";
+import CoinGrid from "./CoinGrid";
+import ConfirmButton from "../ui/ConfirmButton";
 
 const Setting = props => {
   useEffect(() => {
@@ -20,10 +22,17 @@ const Setting = props => {
     }
   };
 
+  const { coinList } = props;
   const spinner = <Spinner name="ball-pulse-sync" color="orange" />;
-  const SettingContent = <Welcome />;
+  const SettingContent = (
+    <React.Fragment>
+      <Welcome />
+      <ConfirmButton />
+      <CoinGrid coinList={coinList} />
+    </React.Fragment>
+  );
 
-  return props.coinList ? SettingContent : spinner;
+  return coinList ? SettingContent : spinner;
 };
 
 const mapStateToProps = state => {
