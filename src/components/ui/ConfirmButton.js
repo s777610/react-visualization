@@ -6,7 +6,6 @@ import history from "../../history";
 
 const ConfirmButton = props => {
   const confirmFavorites = () => {
-    //props.togglePage("Dashboard");
     history.push("/");
     props.firstVisit(false);
     localStorage.setItem(

@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import Welcome from "./Welcome";
 import { firstVisit } from "../../actions/index";
 import { connect } from "react-redux";
+import Spinner from "react-spinkit";
 
 const Setting = props => {
   useEffect(() => {
@@ -12,17 +13,26 @@ const Setting = props => {
     let cryptoDashData = JSON.parse(localStorage.getItem("cryptoDash"));
     if (!cryptoDashData) {
       console.log("no cryptoDashData from localStorage");
-      //props.togglePage("Settings");
+
       props.firstVisit(true);
     } else {
       console.log("settings data found from localStorage");
     }
   };
 
-  return <Welcome />;
+  const spinner = <Spinner name="ball-pulse-sync" color="orange" />;
+  const SettingContent = <Welcome />;
+
+  return props.coinList ? SettingContent : spinner;
+};
+
+const mapStateToProps = state => {
+  return {
+    coinList: state.coinList.coinList
+  };
 };
 
 export default connect(
-  null,
+  mapStateToProps,
   { firstVisit }
 )(Setting);
