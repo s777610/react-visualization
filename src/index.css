@@ -53,20 +53,25 @@ h5 {
 }
 
 .centerDiv {
-  margin: 20px;
-  color: green;
-}
-
-.confirmButton {
-  display: -ms-grid;
-  display: grid;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  display: -ms-grid;
+  display: grid;
+}
+
+.confirmButton {
+  margin: 20px;
+  color: #42ff3a;
+  font-size: 1.5em;
+  padding: 5px;
+  font-family: "EconomicaBold", sans-serif;
 }
 
 .confirmButton:hover {
   color: yellow;
+  -webkit-box-shadow: 0px 0px 4px 2px #5fff17;
+          box-shadow: 0px 0px 4px 2px #5fff17;
 }
 
 .coinGrid {
