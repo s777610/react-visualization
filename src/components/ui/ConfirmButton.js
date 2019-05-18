@@ -17,11 +17,11 @@ const ConfirmButton = props => {
   };
 
   return (
-    <Link to="/" className="centerDiv">
-      <div className="confirmButton" onClick={confirmFavorites}>
-        Confirm Favorites
-      </div>
-    </Link>
+    <div className="confirmButton">
+      <Link to="/">
+        <div onClick={confirmFavorites}>Confirm Favorites</div>
+      </Link>
+    </div>
   );
 };
 

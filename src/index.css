@@ -49,7 +49,7 @@ h5 {
 }
 
 .controlBtnActive {
-  text-shadow: 0 0 10px #fff, 0 0 20px #49ff18, 0 0 30px #49ff18, 0 0 55px #49ff18, 7px -22px 4px rgba(95, 206, 151, 0);
+  text-shadow: 0 0 10px #fff, 0 0 20px #49ff18, 0 0 30px #3ae20b, 0 0 55px #49ff18, 7px -22px 4px rgba(95, 206, 151, 0);
 }
 
 .centerDiv {
@@ -61,17 +61,33 @@ h5 {
 }
 
 .confirmButton {
-  margin: 20px;
-  color: #42ff3a;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  display: -ms-grid;
+  display: grid;
+  margin: 20px auto;
   font-size: 1.5em;
   padding: 5px;
   font-family: "EconomicaBold", sans-serif;
+  max-width: 180px;
+}
+
+.confirmButton a {
+  color: #42ff3a;
+}
+
+.confirmButton a:hover {
+  text-decoration: none;
 }
 
 .confirmButton:hover {
+  -webkit-box-shadow: 0px 0px 4px 2px yellow;
+          box-shadow: 0px 0px 4px 2px yellow;
+}
+
+.confirmButton:hover a {
   color: yellow;
-  -webkit-box-shadow: 0px 0px 4px 2px #5fff17;
-          box-shadow: 0px 0px 4px 2px #5fff17;
 }
 
 .coinGrid {
@@ -79,5 +95,27 @@ h5 {
   display: grid;
   -ms-grid-columns: (1fr)[5];
       grid-template-columns: repeat(5, 1fr);
+  grid-gap: 15px;
+}
+
+.tile {
+  background-color: #121d5b;
+  padding: 10px;
+}
+
+.tile:hover {
+  -webkit-box-shadow: 0px 0px 5px 1px #a9b6ff;
+          box-shadow: 0px 0px 5px 1px #a9b6ff;
+  cursor: pointer;
+}
+
+.test {
+  color: #061a44;
+  color: #010e2c;
+  color: #42ff3a;
+  color: #e1eaee;
+  color: #121d5b;
+  color: #5fff17;
+  color: #e41111;
 }
 /*# sourceMappingURL=index.css.map */
