@@ -27,6 +27,7 @@ const Setting = props => {
   const SettingContent = (
     <React.Fragment>
       <Welcome />
+      <CoinGrid coinList={coinList} topSection />
       <ConfirmButton />
       <CoinGrid coinList={coinList} />
     </React.Fragment>

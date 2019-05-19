@@ -1,14 +1,20 @@
 import React from "react";
-import Tile from "../ui/Tile";
+import CoinTile from "./CoinTile";
 
-const CoinGrid = props => {
+const CoinGrid = ({ coinList, topSection }) => {
+  const getCoinsToDisplay = (coinList, topSection) => {
+    return Object.keys(coinList).slice(0, topSection ? 10 : 100);
+  };
+
   return (
     <div className="coinGrid">
-      {Object.keys(props.coinList).map(coinKey => {
+      {getCoinsToDisplay(coinList, topSection).map(coinKey => {
         return (
-          <div className="tile" key={coinKey}>
-            {coinKey}
-          </div>
+          <CoinTile
+            topSection={topSection}
+            key={coinKey}
+            coin={coinList[coinKey]}
+          />
         );
       })}
     </div>

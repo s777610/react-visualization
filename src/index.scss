@@ -81,19 +81,57 @@ h5 {
 
 // CoinGrid //@at-root
 .coinGrid {
+  margin-top: 40px;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-gap: 15px;
 }
 
+.coinHeaderGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.deleteHeaderGrid {
+  justify-self: right;
+  display: none;
+  color: red;
+}
+
+.coinSymbol {
+  justify-self: right;
+}
+
+.coinImage {
+  height: 50px;
+}
+
 // Tile
-.tile {
+.selectableTile {
   background-color: #121d5b;
   padding: 10px;
   &:hover {
     box-shadow: 0px 0px 5px 1px #a9b6ff;
     cursor: pointer;
   }
+}
+
+.deleteableTile {
+  background-color: #36042a;
+  padding: 10px;
+  &:hover {
+    box-shadow: 0px 0px 5px 1px #e41111;
+    cursor: pointer;
+  }
+
+  &:hover .deleteHeaderGrid {
+    display: block;
+  }
+}
+
+.disableTile {
+  pointer-events: none;
+  opacity: 0.4;
 }
 
 .test {
