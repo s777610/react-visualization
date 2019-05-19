@@ -94,8 +94,8 @@ h5 {
   margin-top: 40px;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (1fr)[5];
-      grid-template-columns: repeat(5, 1fr);
+  -ms-grid-columns: (minmax(130px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
   grid-gap: 15px;
 }
 
