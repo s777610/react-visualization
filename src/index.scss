@@ -135,6 +135,21 @@ h5 {
   opacity: 0.3;
 }
 
+// Search //@at-root
+.search {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+
+  &__input {
+    background-color: #afddf1;
+    color: #010e2c;
+    font-size: 140%;
+    height: 40px;
+    justify-self: left;
+    align-self: center;
+  }
+}
+
 .test {
   color: #061a44;
   color: #010e2c;

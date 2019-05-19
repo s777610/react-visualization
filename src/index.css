@@ -153,6 +153,25 @@ h5 {
   opacity: 0.3;
 }
 
+.search {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 200px 1fr;
+      grid-template-columns: 200px 1fr;
+}
+
+.search__input {
+  background-color: #afddf1;
+  color: #010e2c;
+  font-size: 140%;
+  height: 40px;
+  -ms-grid-column-align: left;
+      justify-self: left;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
 .test {
   color: #061a44;
   color: #010e2c;

@@ -5,6 +5,7 @@ import { connect } from "react-redux";
 import Spinner from "react-spinkit";
 import CoinGrid from "./CoinGrid";
 import ConfirmButton from "../ui/ConfirmButton";
+import Search from "./Search";
 
 const Setting = props => {
   useEffect(() => {
@@ -30,6 +31,7 @@ const Setting = props => {
       <Welcome />
       <CoinGrid coinList={coinList} topSection />
       <ConfirmButton />
+      <Search />
       <CoinGrid coinList={coinList} />
     </React.Fragment>
   );
