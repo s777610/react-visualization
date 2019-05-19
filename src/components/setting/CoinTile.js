@@ -1,10 +1,30 @@
 import React from "react";
+import { connect } from "react-redux";
+import { addCoin, removeCoin } from "../../actions/index";
 
-const CoinTile = ({ coin, topSection }) => {
+const MAX_FAVORITES = 10;
+
+const CoinTile = ({ coin, topSection, addCoin, removeCoin, favorites }) => {
   const { CoinName, Symbol, ImageUrl } = coin;
 
+  const changeFavorite = symbol => {
+    return topSection ? removeCoin(symbol) : addCoin(symbol);
+  };
+
   return (
-    <div className={topSection ? "deleteableTile" : "selectableTile"}>
+    <div
+      className={
+        topSection
+          ? "deleteableTile"
+          : `selectableTile ${
+              favorites.has(Symbol) ||
+              Array.from(favorites).length >= MAX_FAVORITES
+                ? "disableTile"
+                : null
+            }`
+      }
+      onClick={() => changeFavorite(Symbol)}
+    >
       <div className="coinHeaderGrid">
         <div>{CoinName}</div>
         {topSection ? (
@@ -22,4 +42,13 @@ const CoinTile = ({ coin, topSection }) => {
   );
 };
 
-export default CoinTile;
+const mapStateToProps = state => {
+  return {
+    favorites: state.coin.favorites
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  { addCoin, removeCoin }
+)(CoinTile);

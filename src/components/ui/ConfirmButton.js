@@ -11,7 +11,7 @@ const ConfirmButton = props => {
     localStorage.setItem(
       "cryptoDash",
       JSON.stringify({
-        test: "hello"
+        favorites: Array.from(props.favorites)
       })
     );
   };
@@ -25,7 +25,13 @@ const ConfirmButton = props => {
   );
 };
 
+const mapStateToProps = state => {
+  return {
+    favorites: state.coin.favorites
+  };
+};
+
 export default connect(
-  null,
+  mapStateToProps,
   { firstVisit }
 )(ConfirmButton);

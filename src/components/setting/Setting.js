@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import Welcome from "./Welcome";
-import { firstVisit } from "../../actions/index";
+import { firstVisit, setFavorites } from "../../actions/index";
 import { connect } from "react-redux";
 import Spinner from "react-spinkit";
 import CoinGrid from "./CoinGrid";
@@ -15,10 +15,11 @@ const Setting = props => {
     let cryptoDashData = JSON.parse(localStorage.getItem("cryptoDash"));
     if (!cryptoDashData) {
       console.log("no cryptoDashData from localStorage");
-
       props.firstVisit(true);
     } else {
       console.log("settings data found from localStorage");
+      let { favorites } = cryptoDashData;
+      props.setFavorites(favorites);
     }
   };
 
@@ -38,11 +39,11 @@ const Setting = props => {
 
 const mapStateToProps = state => {
   return {
-    coinList: state.coinList.coinList
+    coinList: state.coin.coinList
   };
 };
 
 export default connect(
   mapStateToProps,
-  { firstVisit }
+  { firstVisit, setFavorites }
 )(Setting);

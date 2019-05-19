@@ -1,9 +1,12 @@
 import React from "react";
 import CoinTile from "./CoinTile";
+import { connect } from "react-redux";
 
-const CoinGrid = ({ coinList, topSection }) => {
+const CoinGrid = ({ coinList, topSection, favorites }) => {
   const getCoinsToDisplay = (coinList, topSection) => {
-    return Object.keys(coinList).slice(0, topSection ? 10 : 100);
+    return topSection
+      ? Array.from(favorites)
+      : Object.keys(coinList).slice(0, 100);
   };
 
   return (
@@ -21,4 +24,10 @@ const CoinGrid = ({ coinList, topSection }) => {
   );
 };
 
-export default CoinGrid;
+const mapStateToProps = state => {
+  return {
+    favorites: state.coin.favorites
+  };
+};
+
+export default connect(mapStateToProps)(CoinGrid);

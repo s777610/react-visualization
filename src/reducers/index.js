@@ -4,5 +4,5 @@ import coinReducer from "./coinReducer";
 
 export default combineReducers({
   page: pageReducer,
-  coinList: coinReducer
+  coin: coinReducer
 });
