@@ -24,7 +24,7 @@ const Setting = props => {
     }
   };
 
-  const { coinList } = props;
+  const { coinList, filteredCoins } = props;
   const spinner = <Spinner name="ball-pulse-sync" color="orange" />;
   const SettingContent = (
     <React.Fragment>
@@ -32,7 +32,11 @@ const Setting = props => {
       <CoinGrid coinList={coinList} topSection />
       <ConfirmButton />
       <Search />
-      <CoinGrid coinList={coinList} />
+      {!filteredCoins ? (
+        <CoinGrid coinList={coinList} />
+      ) : (
+        <CoinGrid coinList={filteredCoins} />
+      )}
     </React.Fragment>
   );
 
@@ -41,7 +45,8 @@ const Setting = props => {
 
 const mapStateToProps = state => {
   return {
-    coinList: state.coin.coinList
+    coinList: state.coin.coinList,
+    filteredCoins: state.coin.filteredCoins
   };
 };
 

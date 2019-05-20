@@ -3,7 +3,8 @@ import {
   COINDATA,
   ADDCOIN,
   REMOVECOIN,
-  SETFAVORTIE
+  SETFAVORTIE,
+  SETFILTEREDCOIN
 } from "./types";
 
 export const firstVisit = isFirstVisit => {
@@ -38,5 +39,12 @@ export const setFavorites = favorites => {
   return {
     type: SETFAVORTIE,
     favorites
+  };
+};
+
+export const setFilteredCoins = filteredCoins => {
+  return {
+    type: SETFILTEREDCOIN,
+    filteredCoins
   };
 };

@@ -12,6 +12,7 @@ function App(props) {
     const fetchCoins = async () => {
       let coinList = await cc.coinList();
       let Data = await coinList.Data;
+      console.log("TCL: fetchCoins -> Data", Data);
       props.setCoinList(Data);
     };
     fetchCoins();

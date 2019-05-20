@@ -1,8 +1,15 @@
-import { COINDATA, ADDCOIN, REMOVECOIN, SETFAVORTIE } from "../actions/types";
+import {
+  COINDATA,
+  ADDCOIN,
+  REMOVECOIN,
+  SETFAVORTIE,
+  SETFILTEREDCOIN
+} from "../actions/types";
 
 const INTIAL_STATE = {
   coinList: null,
-  favorites: new Set()
+  favorites: new Set(),
+  filteredCoins: null
 };
 
 // ["BTC", "ETH", "XMR", "DOGE"]
@@ -26,6 +33,11 @@ export default (state = INTIAL_STATE, action) => {
       return {
         ...state,
         favorites: new Set(action.favorites)
+      };
+    case SETFILTEREDCOIN:
+      return {
+        ...state,
+        filteredCoins: action.filteredCoins
       };
     default:
       return state;
