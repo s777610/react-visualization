@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import Welcome from "./Welcome";
-import { firstVisit, setFavorites } from "../../actions/index";
+import { firstVisit, setFavorites, setCoinList } from "../../actions/index";
 import { connect } from "react-redux";
 import Spinner from "react-spinkit";
 import CoinGrid from "./CoinGrid";
@@ -8,21 +8,25 @@ import ConfirmButton from "../ui/ConfirmButton";
 import Search from "./Search";
 
 const Setting = props => {
+  /////////////////////////////////////////
+  //getDataFromLocalStorage: just one time
+  /////////////////////////////////////////
   useEffect(() => {
-    savedSettings();
-  });
+    console.log("getDataFromLocalStorage()");
+    const getDataFromLocalStorage = () => {
+      let cryptoDashData = JSON.parse(localStorage.getItem("cryptoDash"));
 
-  const savedSettings = () => {
-    let cryptoDashData = JSON.parse(localStorage.getItem("cryptoDash"));
-    if (!cryptoDashData) {
-      console.log("no cryptoDashData from localStorage");
-      props.firstVisit(true);
-    } else {
-      console.log("settings data found from localStorage");
-      let { favorites } = cryptoDashData;
-      props.setFavorites(favorites);
-    }
-  };
+      if (!cryptoDashData) {
+        props.firstVisit(true);
+      } else {
+        let { favorites } = cryptoDashData;
+
+        props.firstVisit(false);
+        props.setFavorites(favorites);
+      }
+    };
+    getDataFromLocalStorage();
+  }, []);
 
   const { coinList, filteredCoins } = props;
   const spinner = <Spinner name="ball-pulse-sync" color="orange" />;
@@ -52,5 +56,5 @@ const mapStateToProps = state => {
 
 export default connect(
   mapStateToProps,
-  { firstVisit, setFavorites }
+  { firstVisit, setFavorites, setCoinList }
 )(Setting);

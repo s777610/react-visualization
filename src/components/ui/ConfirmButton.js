@@ -1,5 +1,5 @@
 import React from "react";
-import { firstVisit } from "../../actions/index";
+import { firstVisit, setFavorites } from "../../actions/index";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import history from "../../history";
@@ -33,5 +33,5 @@ const mapStateToProps = state => {
 
 export default connect(
   mapStateToProps,
-  { firstVisit }
+  { firstVisit, setFavorites }
 )(ConfirmButton);

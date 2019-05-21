@@ -7,7 +7,7 @@ const INTIAL_STATE = {
 export default (state = INTIAL_STATE, action) => {
   switch (action.type) {
     case FIRSTVISIT:
-      return { ...state, firstVisit: false };
+      return { ...state, firstVisit: action.isFirstVisit };
     default:
       return state;
   }
