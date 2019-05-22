@@ -8,20 +8,14 @@ import { connect } from "react-redux";
 import { setCoinList } from "../actions/index";
 
 function App(props) {
-  //////////////////////////////////////
-  // fetch Coin data Hook: just one time
-  //////////////////////////////////////
   useEffect(() => {
-    const fetchCoins = async () => {
+    (async () => {
       let coinList = await cc.coinList();
       let Data = await coinList.Data;
-      console.log("TCL: fetchCoins -> Data", Data);
       props.setCoinList(Data);
-    };
-
-    fetchCoins();
+    })();
     console.log("fetchCoins from App");
-  }, []);
+  }, [props]);
 
   return (
     <div className="layout">

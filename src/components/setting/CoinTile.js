@@ -17,8 +17,7 @@ const CoinTile = ({ coin, topSection, addCoin, removeCoin, favorites }) => {
         topSection
           ? "deleteableTile"
           : `selectableTile ${
-              favorites.has(Symbol) ||
-              Array.from(favorites).length >= MAX_FAVORITES
+              favorites.includes(Symbol) || favorites.length >= MAX_FAVORITES
                 ? "disableTile"
                 : null
             }`

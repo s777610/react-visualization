@@ -9,7 +9,7 @@ import {
 
 const INTIAL_STATE = {
   coinList: null,
-  favorites: new Set(),
+  favorites: null,
   filteredCoins: null,
   prices: []
 };
@@ -21,18 +21,19 @@ export default (state = INTIAL_STATE, action) => {
     case ADDCOIN:
       return {
         ...state,
-        favorites: new Set(state.favorites).add(action.key)
+        favorites: [...state.favorites, action.key]
       };
     case REMOVECOIN:
-      state.favorites.delete(action.key);
       return {
         ...state,
-        favorites: new Set(state.favorites)
+        favorites: state.favorites.filter(fav => {
+          return fav !== action.key;
+        })
       };
     case SETFAVORTIE:
       return {
         ...state,
-        favorites: new Set(action.favorites)
+        favorites: action.favorites
       };
     case SETFILTEREDCOIN:
       return {

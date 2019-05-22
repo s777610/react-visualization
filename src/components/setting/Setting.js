@@ -20,8 +20,8 @@ const Setting = props => {
         props.firstVisit(true);
       } else {
         let { favorites } = cryptoDashData;
-
         props.firstVisit(false);
+
         props.setFavorites(favorites);
       }
     };

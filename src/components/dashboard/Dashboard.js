@@ -18,9 +18,10 @@ const Dashboard = props => {
         hisory.push("/setting");
       } else {
         let { favorites } = cryptoDashData;
-
         props.firstVisit(false);
+
         props.setFavorites(favorites);
+        console.log("props.setFavorites(favorites); called");
       }
     };
     getDataFromLocalStorage();
@@ -30,28 +31,23 @@ const Dashboard = props => {
   // fetchPrice hook: just one time
   //////////////////////////////////////
   useEffect(() => {
-    // if (props.firstVisit) return;
+    const { favorites } = props;
 
     const fetchPrice = async () => {
-      let pricesData = await prices();
-      // set the prices into redux store
-      props.setPrices(pricesData);
-    };
-
-    const prices = async () => {
       let returnData = [];
-      const favorites = Array.from(props.favorites);
 
-      for (let i = 0; i < favorites.length; i++) {
-        try {
-          let priceData = await cc.priceFull(favorites[i], "USD");
-          returnData.push(priceData);
-        } catch (err) {
-          console.warn("Fetch price error: ", err);
+      if (props.favorites) {
+        for (let i = 0; i < favorites.length; i++) {
+          try {
+            let priceData = await cc.priceFull(favorites[i], "USD");
+            returnData.push(priceData);
+          } catch (err) {
+            console.warn("Fetch price error: ", err);
+          }
         }
       }
 
-      return returnData;
+      props.setPrices(returnData);
     };
 
     console.log("fetchPrice();");
