@@ -26,6 +26,7 @@ const Setting = props => {
       }
     };
     getDataFromLocalStorage();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const { coinList, filteredCoins } = props;

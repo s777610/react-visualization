@@ -172,6 +172,32 @@ h5 {
       align-self: center;
 }
 
+.priceGrid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(130px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  grid-gap: 15px;
+  margin-top: 40px;
+}
+
+.priceGrid__24hr {
+  -ms-grid-column-align: right;
+      justify-self: right;
+}
+
+.priceGrid .red {
+  color: red;
+}
+
+.priceGrid .green {
+  color: green;
+}
+
+.tickerPrice {
+  font-size: 1.7em;
+}
+
 .test {
   color: #061a44;
   color: #010e2c;

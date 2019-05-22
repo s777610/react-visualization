@@ -1,8 +1,10 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import cc from "cryptocompare";
 import hisory from "../../history";
 import { setFavorites, firstVisit, setPrices } from "../../actions/index";
+import PriceGrid from "./PriceGrid";
 
 const Dashboard = props => {
   /////////////////////////////////////////
@@ -55,7 +57,7 @@ const Dashboard = props => {
   }, [props.favorites]);
 
   return props.prices.length > 0 ? (
-    <h1>I got prices</h1>
+    <PriceGrid prices={props.prices} />
   ) : (
     <h1>I am Dashboard</h1>
   );

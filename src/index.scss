@@ -152,6 +152,29 @@ h5 {
   }
 }
 
+// Price Grid //
+.priceGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  grid-gap: 15px;
+  margin-top: 40px;
+
+  &__24hr {
+    justify-self: right;
+  }
+  .red {
+    color: red;
+  }
+
+  .green {
+    color: green;
+  }
+}
+
+.tickerPrice {
+  font-size: 1.7em;
+}
+
 .test {
   color: #061a44;
   color: #010e2c;
