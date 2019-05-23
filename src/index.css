@@ -122,6 +122,12 @@ h5 {
   height: 50px;
 }
 
+.coinImage__spotligh {
+  height: 180px;
+  margin: auto;
+  display: block;
+}
+
 .selectableTile {
   background-color: #121d5b;
   padding: 10px;
@@ -209,6 +215,29 @@ h5 {
           box-shadow: 0px 0px 5px 1px #42ff3a;
 }
 
+.spinnerCenter {
+  margin-top: 20vh;
+  text-align: center;
+}
+
+.chartGrid {
+  display: -ms-grid;
+  display: grid;
+  margin-top: 20px;
+  grid-gap: 15px;
+  -ms-grid-columns: 1fr 3fr;
+      grid-template-columns: 1fr 3fr;
+}
+
+.chartGrid__tile {
+  background-color: #121d5b;
+  padding: 10px;
+}
+
+.chartGrid__tile h2 {
+  text-align: center;
+}
+
 .test {
   color: #061a44;
   color: #010e2c;
@@ -217,10 +246,5 @@ h5 {
   color: #121d5b;
   color: #5fff17;
   color: #e41111;
-}
-
-.spinnerCenter {
-  margin-top: 20vh;
-  text-align: center;
 }
 /*# sourceMappingURL=index.css.map */

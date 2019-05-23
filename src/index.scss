@@ -105,6 +105,12 @@ h5 {
 
 .coinImage {
   height: 50px;
+
+  &__spotligh {
+    height: 180px;
+    margin: auto;
+    display: block;
+  }
 }
 
 // Tile
@@ -183,6 +189,28 @@ h5 {
   }
 }
 
+.spinnerCenter {
+  margin-top: 20vh;
+  text-align: center;
+}
+
+.chartGrid {
+  display: grid;
+  margin-top: 20px;
+
+  grid-gap: 15px;
+  grid-template-columns: 1fr 3fr;
+
+  &__tile {
+    background-color: #121d5b;
+    padding: 10px;
+
+    h2 {
+      text-align: center;
+    }
+  }
+}
+
 .test {
   color: #061a44;
   color: #010e2c;
@@ -191,9 +219,4 @@ h5 {
   color: #121d5b;
   color: #5fff17;
   color: #e41111;
-}
-
-.spinnerCenter {
-  margin-top: 20vh;
-  text-align: center;
 }

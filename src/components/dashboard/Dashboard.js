@@ -63,15 +63,16 @@ const Dashboard = props => {
     fetchPrice();
   }, [props.favorites]);
 
-  return (
+  return props.prices.length > 0 ? (
     <React.Fragment>
-      {props.prices.length > 0 ? (
-        <PriceGrid prices={props.prices} />
-      ) : (
-        <MySpinner />
-      )}
-      <CoinSpotligh />
+      <PriceGrid prices={props.prices} />
+      <div className="chartGrid">
+        <CoinSpotligh currentFavorite={props.currentFavorite} />
+        <div>Chart goes here</div>
+      </div>
     </React.Fragment>
+  ) : (
+    <MySpinner />
   );
 };
 
@@ -79,7 +80,8 @@ const mapStateToProsp = state => {
   return {
     favorites: state.coin.favorites,
     firstVisit: state.page.firstVisit,
-    prices: state.coin.prices
+    prices: state.coin.prices,
+    currentFavorite: state.coin.currentFavorite
   };
 };
 
