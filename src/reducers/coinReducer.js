@@ -4,14 +4,16 @@ import {
   REMOVECOIN,
   SETFAVORTIE,
   SETFILTEREDCOIN,
-  SETPRICES
+  SETPRICES,
+  SETCURFAVORITE
 } from "../actions/types";
 
 const INTIAL_STATE = {
   coinList: null,
   favorites: null,
   filteredCoins: null,
-  prices: []
+  prices: [],
+  currentFavorite: null
 };
 
 export default (state = INTIAL_STATE, action) => {
@@ -44,6 +46,11 @@ export default (state = INTIAL_STATE, action) => {
       return {
         ...state,
         prices: action.prices
+      };
+    case SETCURFAVORITE:
+      return {
+        ...state,
+        currentFavorite: action.currentFavorite
       };
     default:
       return state;

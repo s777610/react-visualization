@@ -5,7 +5,8 @@ import {
   REMOVECOIN,
   SETFAVORTIE,
   SETFILTEREDCOIN,
-  SETPRICES
+  SETPRICES,
+  SETCURFAVORITE
 } from "./types";
 
 export const firstVisit = isFirstVisit => {
@@ -54,5 +55,12 @@ export const setPrices = prices => {
   return {
     type: SETPRICES,
     prices
+  };
+};
+
+export const setCurFavorite = currentFavorite => {
+  return {
+    type: SETCURFAVORITE,
+    currentFavorite
   };
 };

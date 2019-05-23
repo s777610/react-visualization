@@ -3,8 +3,15 @@ import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import cc from "cryptocompare";
 import hisory from "../../history";
-import { setFavorites, firstVisit, setPrices } from "../../actions/index";
+import {
+  setFavorites,
+  firstVisit,
+  setPrices,
+  setCurFavorite
+} from "../../actions/index";
 import PriceGrid from "./PriceGrid";
+import MySpinner from "../ui/Spinner";
+import CoinSpotligh from "./CoinSpotligh";
 
 const Dashboard = props => {
   /////////////////////////////////////////
@@ -19,9 +26,9 @@ const Dashboard = props => {
         props.firstVisit(true);
         hisory.push("/setting");
       } else {
-        let { favorites } = cryptoDashData;
+        let { favorites, currentFavorite } = cryptoDashData;
         props.firstVisit(false);
-
+        props.setCurFavorite(currentFavorite);
         props.setFavorites(favorites);
         console.log("props.setFavorites(favorites); called");
       }
@@ -56,10 +63,15 @@ const Dashboard = props => {
     fetchPrice();
   }, [props.favorites]);
 
-  return props.prices.length > 0 ? (
-    <PriceGrid prices={props.prices} />
-  ) : (
-    <h1>I am Dashboard</h1>
+  return (
+    <React.Fragment>
+      {props.prices.length > 0 ? (
+        <PriceGrid prices={props.prices} />
+      ) : (
+        <MySpinner />
+      )}
+      <CoinSpotligh />
+    </React.Fragment>
   );
 };
 
@@ -73,5 +85,5 @@ const mapStateToProsp = state => {
 
 export default connect(
   mapStateToProsp,
-  { setFavorites, firstVisit, setPrices }
+  { setFavorites, firstVisit, setPrices, setCurFavorite }
 )(Dashboard);

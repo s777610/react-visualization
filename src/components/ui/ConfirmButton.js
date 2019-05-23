@@ -6,12 +6,14 @@ import history from "../../history";
 
 const ConfirmButton = props => {
   const confirmFavorites = () => {
+    let currentFavorite = props.favorites[0];
     history.push("/");
     props.firstVisit(false);
     localStorage.setItem(
       "cryptoDash",
       JSON.stringify({
-        favorites: Array.from(props.favorites)
+        favorites: props.favorites,
+        currentFavorite
       })
     );
   };
