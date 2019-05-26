@@ -14,7 +14,9 @@ const Setting = props => {
   /////////////////////////////////////////
   useEffect(() => {
     const getDataFromLocalStorage = () => {
-      let cryptoDashData = JSON.parse(localStorage.getItem("cryptoDash"));
+      let cryptoDashData = JSON.parse(
+        localStorage.getItem("cryptoDash__ewfbkwlejf")
+      );
 
       if (!cryptoDashData) {
         props.firstVisit(true);

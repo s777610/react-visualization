@@ -10,7 +10,7 @@ import {
 
 const INTIAL_STATE = {
   coinList: null,
-  favorites: null,
+  favorites: [],
   filteredCoins: null,
   prices: [],
   currentFavorite: null

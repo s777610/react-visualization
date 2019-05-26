@@ -11,7 +11,7 @@ const ConfirmButton = ({ favorites, firstVisit }) => {
     history.push("/");
     firstVisit(false);
     localStorage.setItem(
-      "cryptoDash",
+      "cryptoDash__ewfbkwlejf",
       JSON.stringify({
         favorites,
         currentFavorite

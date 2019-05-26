@@ -20,7 +20,7 @@ const PriceTile = ({ price, index, currentFavorite, setCurFavorite }) => {
     localStorage.setItem(
       "cryptoDash",
       JSON.stringify({
-        ...JSON.parse(localStorage.getItem("cryptoDash")),
+        ...JSON.parse(localStorage.getItem("cryptoDash__ewfbkwlejf")),
         currentFavorite: sym
       })
     );
