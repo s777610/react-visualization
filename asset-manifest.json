@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/react-visualization/static/css/main.13a61ab5.chunk.css",
+    "main.js": "/react-visualization/static/js/main.9618d6de.chunk.js",
+    "main.js.map": "/react-visualization/static/js/main.9618d6de.chunk.js.map",
+    "runtime~main.js": "/react-visualization/static/js/runtime~main.97657584.js",
+    "runtime~main.js.map": "/react-visualization/static/js/runtime~main.97657584.js.map",
+    "static/css/2.a8fecc3c.chunk.css": "/react-visualization/static/css/2.a8fecc3c.chunk.css",
+    "static/js/2.b0353d07.chunk.js": "/react-visualization/static/js/2.b0353d07.chunk.js",
+    "static/js/2.b0353d07.chunk.js.map": "/react-visualization/static/js/2.b0353d07.chunk.js.map",
+    "index.html": "/react-visualization/index.html",
+    "precache-manifest.16974901aa06ff609263e1f1b5d2adbd.js": "/react-visualization/precache-manifest.16974901aa06ff609263e1f1b5d2adbd.js",
+    "service-worker.js": "/react-visualization/service-worker.js",
+    "static/css/2.a8fecc3c.chunk.css.map": "/react-visualization/static/css/2.a8fecc3c.chunk.css.map",
+    "static/css/main.13a61ab5.chunk.css.map": "/react-visualization/static/css/main.13a61ab5.chunk.css.map",
+    "static/media/index.css": "/react-visualization/static/media/roboto-condensed.light.cf4449c1.ttf",
+    "static/media/email_icon.png": "/react-visualization/static/media/email_icon.fd99f8e3.png",
+    "static/media/instagram_icon.png": "/react-visualization/static/media/instagram_icon.c88cc5d1.png"
+  }
+}
