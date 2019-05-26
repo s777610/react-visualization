@@ -9,10 +9,10 @@ import {
   setPrices,
   setCurFavorite
 } from "../../actions/index";
-import PriceGrid from "./PriceGrid";
+import PriceGrid from "./coin/PriceGrid";
 import MySpinner from "../ui/Spinner";
-import CoinSpotligh from "./CoinSpotligh";
-import PriceChart from "./PriceChart";
+import CoinSpotligh from "./coin/CoinSpotligh";
+import PriceChart from "./chart/PriceChart";
 
 const Dashboard = props => {
   /////////////////////////////////////////
@@ -69,7 +69,7 @@ const Dashboard = props => {
       <PriceGrid prices={props.prices} />
       <div className="chartGrid">
         <CoinSpotligh currentFavorite={props.currentFavorite} />
-        <PriceChart />
+        <PriceChart currentFavorite={props.currentFavorite} />
       </div>
     </React.Fragment>
   ) : (

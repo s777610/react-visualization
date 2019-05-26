@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { addCoin, removeCoin } from "../../actions/index";
+import { addCoin, removeCoin } from "../../../actions/index";
 
 const MAX_FAVORITES = 10;
 
@@ -17,7 +17,8 @@ const CoinTile = ({ coin, topSection, addCoin, removeCoin, favorites }) => {
         topSection
           ? "deleteableTile"
           : `selectableTile ${
-              favorites.includes(Symbol) || favorites.length >= MAX_FAVORITES
+              (favorites && favorites.includes(Symbol)) ||
+              (favorites && favorites.length >= MAX_FAVORITES)
                 ? "disableTile"
                 : null
             }`

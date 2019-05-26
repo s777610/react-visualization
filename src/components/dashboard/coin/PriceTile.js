@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { setCurFavorite } from "../../actions/index";
+import { setCurFavorite } from "../../../actions/index";
 
 const PriceTile = ({ price, index, currentFavorite, setCurFavorite }) => {
   const sym = Object.keys(price)[0];
@@ -37,7 +37,7 @@ const PriceTile = ({ price, index, currentFavorite, setCurFavorite }) => {
         <div>{sym} </div>
         <div className={`priceGrid__24hr ${getColor()}`}>
           {" "}
-          {priceChange24hr}
+          {priceChange24hr} %
         </div>
       </div>
       <div className="tickerPrice">${data.PRICE.toFixed(2)}</div>

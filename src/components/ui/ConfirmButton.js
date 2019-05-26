@@ -1,18 +1,19 @@
 import React from "react";
-import { firstVisit, setFavorites } from "../../actions/index";
+import { firstVisit } from "../../actions/index";
 import { connect } from "react-redux";
-import { Link } from "react-router-dom";
 import history from "../../history";
 
-const ConfirmButton = props => {
+const ConfirmButton = ({ favorites, firstVisit }) => {
   const confirmFavorites = () => {
-    let currentFavorite = props.favorites[0];
+    if (favorites.length === 0) return;
+    let currentFavorite = favorites[0];
+
     history.push("/");
-    props.firstVisit(false);
+    firstVisit(false);
     localStorage.setItem(
       "cryptoDash",
       JSON.stringify({
-        favorites: props.favorites,
+        favorites,
         currentFavorite
       })
     );
@@ -20,9 +21,7 @@ const ConfirmButton = props => {
 
   return (
     <div className="confirmButton">
-      <Link to="/">
-        <div onClick={confirmFavorites}>Confirm Favorites</div>
-      </Link>
+      <div onClick={confirmFavorites}>Confirm Favorites</div>
     </div>
   );
 };
@@ -35,5 +34,5 @@ const mapStateToProps = state => {
 
 export default connect(
   mapStateToProps,
-  { firstVisit, setFavorites }
+  { firstVisit }
 )(ConfirmButton);

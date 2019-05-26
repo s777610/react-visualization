@@ -71,6 +71,7 @@ h5 {
   padding: 5px;
   font-family: "EconomicaBold", sans-serif;
   max-width: 180px;
+  cursor: pointer;
 }
 
 .confirmButton a {
@@ -241,6 +242,15 @@ h5 {
 
 .chartGrid__tile h2 {
   text-align: center;
+}
+
+.chartSelect {
+  background-color: #061a44;
+  font-size: 1em;
+  color: #42ff3a;
+  border: 1px solid;
+  margin: 5px;
+  float: right;
 }
 
 .test {

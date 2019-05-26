@@ -3,7 +3,7 @@ import Welcome from "./Welcome";
 import { firstVisit, setFavorites, setCoinList } from "../../actions/index";
 import { connect } from "react-redux";
 
-import CoinGrid from "./CoinGrid";
+import CoinGrid from "./coin/CoinGrid";
 import ConfirmButton from "../ui/ConfirmButton";
 import Search from "./Search";
 import MySpinner from "../ui/Spinner";
@@ -21,21 +21,27 @@ const Setting = props => {
         props.firstVisit(true);
       } else {
         let { favorites } = cryptoDashData;
-        props.firstVisit(false);
-
-        props.setFavorites(favorites);
+        if (favorites && favorites.length > 0) {
+          props.firstVisit(false);
+          props.setFavorites(favorites);
+        } else {
+          props.setFavorites([]);
+        }
       }
     };
     getDataFromLocalStorage();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const { coinList, filteredCoins } = props;
+  const { coinList, filteredCoins, favorites } = props;
 
   const SettingContent = (
     <React.Fragment>
-      <Welcome />
-      <CoinGrid coinList={coinList} topSection />
+      {favorites && favorites.length > 0 ? (
+        <CoinGrid coinList={coinList} topSection />
+      ) : (
+        <Welcome />
+      )}
       <ConfirmButton />
       <Search />
       {!filteredCoins ? (
@@ -52,7 +58,8 @@ const Setting = props => {
 const mapStateToProps = state => {
   return {
     coinList: state.coin.coinList,
-    filteredCoins: state.coin.filteredCoins
+    filteredCoins: state.coin.filteredCoins,
+    favorites: state.coin.favorites
   };
 };
 
