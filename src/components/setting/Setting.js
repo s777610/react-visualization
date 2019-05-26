@@ -13,7 +13,6 @@ const Setting = props => {
   //getDataFromLocalStorage: just one time
   /////////////////////////////////////////
   useEffect(() => {
-    console.log("getDataFromLocalStorage()");
     const getDataFromLocalStorage = () => {
       let cryptoDashData = JSON.parse(localStorage.getItem("cryptoDash"));
 

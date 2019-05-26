@@ -20,7 +20,6 @@ const Dashboard = props => {
   /////////////////////////////////////////
 
   useEffect(() => {
-    console.log("getDataFromLocalStorage()");
     const getDataFromLocalStorage = () => {
       let cryptoDashData = JSON.parse(localStorage.getItem("cryptoDash"));
       if (!cryptoDashData) {
@@ -31,7 +30,6 @@ const Dashboard = props => {
         props.firstVisit(false);
         props.setCurFavorite(currentFavorite);
         props.setFavorites(favorites);
-        console.log("props.setFavorites(favorites); called");
       }
     };
     getDataFromLocalStorage();
@@ -60,7 +58,6 @@ const Dashboard = props => {
       props.setPrices(returnData);
     };
 
-    console.log("fetchPrice();");
     fetchPrice();
   }, [props.favorites]);
 

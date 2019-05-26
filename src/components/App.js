@@ -14,7 +14,6 @@ function App(props) {
       let Data = await coinList.Data;
       props.setCoinList(Data);
     })();
-    console.log("fetchCoins from App");
   }, [props]);
 
   return (
