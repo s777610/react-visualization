@@ -5,7 +5,7 @@ import history from "../../history";
 
 const ConfirmButton = ({ favorites, firstVisit }) => {
   const confirmFavorites = () => {
-    if (favorites.length === 0) return;
+    if (favorites && favorites.length === 0) return;
     let currentFavorite = favorites[0];
 
     history.push("/");
