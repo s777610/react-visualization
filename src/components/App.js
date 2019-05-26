@@ -6,6 +6,7 @@ import Dashboard from "./dashboard/Dashboard";
 import cc from "cryptocompare";
 import { connect } from "react-redux";
 import { setCoinList } from "../actions/index";
+import SocialsBox from "../components/layout/socials/SocialsBox";
 
 function App(props) {
   useEffect(() => {
@@ -25,6 +26,7 @@ function App(props) {
           <Route exact path="/setting" component={Setting} />
         </Switch>
       </HashRouter>
+      <SocialsBox />
     </div>
   );
 }

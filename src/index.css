@@ -36,7 +36,8 @@ h5 {
 }
 
 .logo {
-  font-size: 1.5em;
+  height: 200%;
+  margin-top: -20px;
 }
 
 .controlButton {
@@ -251,6 +252,19 @@ h5 {
   border: 1px solid;
   margin: 5px;
   float: right;
+}
+
+.socials-box {
+  background-color: #6382e6;
+  color: black;
+  text-align: center;
+  margin: 60px auto 30px auto;
+}
+
+.socialIcon {
+  width: 50px;
+  height: 50px;
+  margin: 10px;
 }
 
 .test {

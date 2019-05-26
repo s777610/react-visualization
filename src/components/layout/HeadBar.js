@@ -1,10 +1,11 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import logo from "../../assets/w.png";
 
 const HeadBar = () => {
   return (
     <div className="bar">
-      <div className="logo">CryptoBash </div>
+      <img className="logo" src={logo} alt="logo" />
       <div />
       <NavLink
         className="controlButton"
